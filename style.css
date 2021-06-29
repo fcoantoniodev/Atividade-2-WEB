@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: auto;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
+    
+}
+
+img {
+    padding-top: 18px;
+    width: 220px;
+    height: 200px;
+}
+
+.title {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+ }
+
+ .col-md-4 {
+     margin-bottom: 5px !important
+    }
+ li {
+    list-style-type: none;
+  }
+  
+.second-content {
+    padding: 50px 20px;
+}
+
+h2 {
+   text-align: center;
+   padding: 20px 0 20px;
+}
+
+ul.none {
+	list-style-type: none;
+	}
+
+
+
+ #app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+

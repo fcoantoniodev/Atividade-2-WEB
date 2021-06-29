@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@next" ></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link  rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"  crossorigin="anonymous">
+
+    <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"  crossorigin="anonymous"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"  crossorigin="anonymous"></script>
+    <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"  crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        
+        <h2>Inserir anúncio</h2>
+
+       <div class="row h-100 justify-content-center align-items-center">
+       <form class="form"  @submit="submitForm">
+        
+        <div class="col-md-4">
+            <input type="text" v-model="form.title" class="form-control" style="width: 400px" id="ftitulo" placeholder="Título" required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="text" v-model="form.descricao" class="form-control" style="width: 400px" id="fdesc" placeholder="Descrição"  name="fdesc" required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="number" v-model="form.quartos" class="form-control" style="width: 400px" min="0" id="fquartos" placeholder="Quartos"  name="fquartos"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="number" v-model="form.vagas" class="form-control" style="width: 400px" min="0" id="fvagasG"  placeholder="Vagas de garagem"  name="fvagasG"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="number" v-model="form.areaT" class="form-control" style="width: 400px" min="0" id="fareat" placeholder="Área do terreno"  name="fareat"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="number" v-model="form.areaC" class="form-control" style="width: 400px" min="0" id="fareaC" placeholder="Área construída"  name="fareaC"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="text" v-model="form.local" class="form-control" style="width: 400px" id="flocal" placeholder="Localidade"  name="flocal"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="number" v-model="form.preco" class="form-control" style="width: 400px" min="0" id="fprice" placeholder="Preço"  name="fprice"required name="ftitulo"/>
+        </div>
+        <div class="col-md-4">
+            <input type="url"  v-model="form.url" class="form-control" style="width: 400px" id="fname" placeholder="Imagem"  name="fname"required name="ftitulo"/>
+         </div>
+
+        <div class="row h-100 justify-content-center align-items-center">
+            <input type="reset"  class="btn btn-danger" value="Limpar"/>
+            <input type="submit" class="btn btn-primary" value="Inserir"/>
+            <input type="button"   class="btn btn-success" @click="getLocalStorage" value="Listar"/>
+        </div>
+       </form> 
+    </div>
+
+       <div class="second-content">
+           <ul v-for="(data, i) in lista" >
+               
+                <li>{{`Título: ${data.title}`}}</li>
+                <li>{{`Descrição: ${data.descricao}`}}</li>
+                <li>{{`Quartos: ${data.quartos}`}}</li>
+                <li>{{`Vagas de garagem: ${data.vagas}`}}</li>
+                <li>{{`Área do terreno: ${data.areaT}`}}</li>
+                <li>{{`Área construída: ${data.areaC}`}}</li>
+                <li>{{`Localidade: ${data.local}`}}</li>
+                <li>{{`Preço: ${data.preco}`}}</li>
+                <li><img :src="data.url" alt="Failed"/></li>
+
+           </ul>
+
+       </div>
+    </div>
+
+        <script src="index.js"></script>
+      
+       <script>
+           const mountedApp = app.mount('#app');
+       </script>
+       
+</body>
+</html>
